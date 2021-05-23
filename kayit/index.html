@@ -22,6 +22,10 @@
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" media="all"></script>
+
     <!-- Main CSS-->
     <link href="css/main.css" rel="stylesheet" media="all">
 </head>
@@ -37,14 +41,14 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Adınız ve Soyadınız</label>
-                                    <input class="input--style-4" type="text" name="first_name">
+                                    <input class="input--style-4" type="text" name="adiniz" id="adiniz">
                                 </div>
                             </div>
 
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Okulunuz</label>
-                                    <input class="input--style-4" type="text" name="okulunuz">
+                                    <input class="input--style-4" type="text" name="okulunuz"  id="okulunuz">
                                 </div>
                             </div>
                             
@@ -54,13 +58,13 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email">
+                                    <input class="input--style-4" type="email" name="eposta"  id="eposta">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Kullanıcı Adınız</label>
-                                    <input class="input--style-4" type="text" name="school">
+                                    <input class="input--style-4" type="text" name="kullaniciadi" id="kullaniciadi">
                                 </div>
                             </div>
                         </div>
@@ -68,24 +72,23 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Şifreniz</label>
-                                    <input class="input--style-4" type="text" name="first_name">
+                                    <input class="input--style-4" type="password" name="sifre"  id="sifre">
                                 </div>
                             </div>
 
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Şifre Tekrarınız</label>
-                                    <input class="input--style-4" type="text" name="okulunuz">
+                                    <input class="input--style-4" type="password" name="sifretekrar" id="sifretekrar">
                                 </div>
                             </div>
-                            
                         </div>
                         <div class="row row-space">
                             <div class="col-2">
-                            <button class="btn btn--radius-2 btn--blue" type="submit">Kayıt Ol</button>
+                            <button class="btn btn--radius-2 btn--blue" onclick="kayit()" type="button">Kayıt Ol</button>
                             </div>
                             <div class="col-2">
-                                <a href="../giris/index.html"> Hesabın Var mı?</a>
+                                <a href="../giris/index.html">Hesabın Var mı?</a>
                                 </div>
                         </div>
                     </form>
@@ -94,6 +97,49 @@
         </div>
     </div>
 
+    <script>
+    function kayit(){
+        var adiniz =  $( "#adiniz" ).val();
+       var okulunuz = $( "#okulunuz" ).val();
+       var eposta = $( "#eposta" ).val();
+       var kullaniciadi = $( "#kullaniciadi" ).val();
+       var sifre = $( "#sifre" ).val();
+       var sifretekrar = $( "#sifretekrar" ).val();
+
+       if(adiniz && okulunuz && eposta && kullaniciadi && sifre && sifretekrar != null){
+           if(sifre == sifretekrar){
+               $.ajax({
+                url: "../kontrol/girisKontrol.php",
+                data: {
+                    'adiniz' : adiniz,
+                    'okulunuz' : okulunuz,
+                    'eposta' : eposta,
+                    'kullaniciadi' : kullaniciadi,
+                    'sifre' : sifre,
+                },
+                success: function(data) {
+                    if(data == "Basarili"){
+                        toastr.success('Kayıt Başarılı');
+                    }
+                    else{
+                        toastr.warning('Sorun Oluştu');
+                    }
+                    },
+                error: function() {
+                    toastr.warning('Sorun Oluştu');
+                }
+               });
+           }
+           else{
+            toastr.error('Şifre Eşleşmedi. Lütfen Kontrol Ediniz.')
+           }
+       }
+    }
+       
+
+
+    </script>
+    
     <!-- Jquery JS-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <!-- Vendor JS-->
