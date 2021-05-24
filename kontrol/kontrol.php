@@ -26,4 +26,14 @@ class kontrol{
             return "Başarısız";
         }
     }
+
+    function girisKontrol($kullanici,$sifre){
+        $bag = $this -> vtbaglan();
+        $sql = "select * from kullanicilar where kullaniciAdi = '$kullanici' and sifre = '$sifre'";
+        $satir = mysqli_fetch_array(mysqli_query($bag,$sql));
+        while($satir){
+            $this -> kullanici = $satir;
+            return $satir;
+        }
+    }
 }
