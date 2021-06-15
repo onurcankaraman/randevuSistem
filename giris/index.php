@@ -1,3 +1,6 @@
+<?php
+session_unset();
+?>
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -75,15 +78,16 @@
        if(kullaniciadi && sifre != null){
           
                $.ajax({
-                url: "../kontrol/giris.php",
+                url: "../kontrol/islemler.php",
                 data: {
-                    'kullaniciadi' : kullaniciadi,
+                    'kullaniciAdi' : kullaniciadi,
                     'sifre' : sifre,
+                    'sorguKodu' : "1"
                 },
                 success: function(data) {
-                    if(data == 0){
+                    if(data == 1){
                         toastr.success('Giriş Başarılı Yönlendiriliyorsunuz');
-                        window.location.href = "../randevu/html/backend/index.html";
+                        window.location.href = "../randevu/html/backend/index.php";
 
                     }
                     else{

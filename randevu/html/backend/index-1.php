@@ -661,6 +661,9 @@
                                 <div class="card card-block card-stretch card-height">
                                     <div class="card-body rounded event-detail event-detail-danger disabled">
                                         <div class="d-flex align-items-top justify-content-between">
+                                            <?php
+
+                                            ?>
                                             <div>
                                                 <h4 class="mb-2 mr-4">Reminder of App Project And Design</h4>                                        
                                                 <p class="mb-2 text-danger font-weight-500 text-uppercase"><i class="las la-user pr-2"></i>One On One</p>

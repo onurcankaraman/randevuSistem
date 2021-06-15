@@ -1,6 +1,9 @@
 <?php
+session_start();
+require_once('vt.php');
 
-$sunucu = "localhost";
-$vtKadi = "root";
-$vtSifre = "";
-$vtAdi = "randevusistem";
+/* GLOBAL DEĞİŞKENLER */
+$bag = vtBaglan();
+
+$kullaniciAdi = $_SESSION["kullaniciAdi"];
+

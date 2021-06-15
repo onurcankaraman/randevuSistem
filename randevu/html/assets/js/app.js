@@ -530,105 +530,11 @@ Index Of Script
                 },
                 events: [
                     {
-                        title: 'Click for Google',
-                        url: 'http://google.com/',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(-20, 'days').format('YYYY-MM-DD') + 'T05:30:00.000Z',
-                        color: '#4731b6'
-                    },
-                    {
                         title: 'All Day Event',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(-18, 'days').format('YYYY-MM-DD') + 'T05:30:00.000Z',
+                        start: '2021-05-07',
+                        end:'2021-05-09',
                         color: '#465af7'
                     },
-                    {
-                        title: 'Long Event',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(-16, 'days').format('YYYY-MM-DD') + 'T05:30:00.000Z',
-                        end: moment(new Date(), 'YYYY-MM-DD').add(-13, 'days').format('YYYY-MM-DD') + 'T05:30:00.000Z',
-                        color: '#7858d7'
-                    },
-                    {
-                        groupId: '999',
-                        title: 'Repeating Event',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(-14, 'days').format('YYYY-MM-DD') + 'T05:30:00.000Z',
-                        color: '#465af7'
-                    },
-                    {
-                        groupId: '999',
-                        title: 'Repeating Event',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(-12, 'days').format('YYYY-MM-DD') + 'T05:30:00.000Z',
-                        color: '#5baa73'
-                    },
-                    {
-                        groupId: '999',
-                        title: 'Repeating Event',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(-10, 'days').format('YYYY-MM-DD') + 'T05:30:00.000Z',
-                        color: '#01041b'
-                    },
-                    {
-                        title: 'Birthday Party',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(-8, 'days').format('YYYY-MM-DD') + 'T05:30:00.000Z',
-                        color: '#4731b6'
-                    },
-                    {
-                        title: 'Meeting',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(-6, 'days').format('YYYY-MM-DD') + 'T05:30:00.000Z',
-                        color: '#15ca92'
-                    },
-                    {
-                        title: 'Birthday Party',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(-5, 'days').format('YYYY-MM-DD') + 'T05:30:00.000Z',
-                        color: '#f4a965'
-                    },
-                    {
-                        title: 'Birthday Party',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(-2, 'days').format('YYYY-MM-DD') + 'T05:30:00.000Z',
-                        color: '#ea643f'
-                    },
-
-                    {
-                        title: 'Meeting',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(0, 'days').format('YYYY-MM-DD') + 'T05:30:00.000Z',
-                        color: '#15ca92'
-                    },
-                    {
-                        title: 'Click for Google',
-                        url: 'http://google.com/',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(0, 'days').format('YYYY-MM-DD') + 'T06:30:00.000Z',
-                        color: '#4731b6'
-                    },
-                    {
-                        groupId: '999',
-                        title: 'Repeating Event',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(0, 'days').format('YYYY-MM-DD') + 'T07:30:00.000Z',
-                        color: '#5baa73'
-                    },
-                    {
-                        title: 'Birthday Party',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(0, 'days').format('YYYY-MM-DD') + 'T08:30:00.000Z',
-                        color: '#f4a965'
-                    },
-                    {
-                        title: 'Doctor Meeting',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(0, 'days').format('YYYY-MM-DD') + 'T05:30:00.000Z',
-                        color: '#f4a965'
-                    },
-                    {
-                        title: 'All Day Event',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(1, 'days').format('YYYY-MM-DD') + 'T05:30:00.000Z',
-                        color: '#465af7'
-                    },
-                    {
-                        groupId: '999',
-                        title: 'Repeating Event',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(8, 'days').format('YYYY-MM-DD') + 'T05:30:00.000Z',
-                        color: '#465af7'
-                    },
-                    {
-                        groupId: '999',
-                        title: 'Repeating Event',
-                        start: moment(new Date(), 'YYYY-MM-DD').add(10, 'days').format('YYYY-MM-DD') + 'T05:30:00.000Z',
-                        color: '#5baa73'
-                    }
                 ]
             });
             calendar1.render();

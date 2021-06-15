@@ -1,0 +1,3 @@
+SORGULAR
+
+1. select mentorler.adi, tarihler.baslangicTarihi, randevular.link, kullanicilar.kullaniciAdi from randevular, kullanicilar, mentorler,tarihler WHERE kullanicilar.id = randevular.kullanici and randevular.tarih = tarihler.id and tarihler.mentorId = mentorler.id
